@@ -1,0 +1,82 @@
+/*0 Formatação da página*/
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: rgb(115, 115, 235);
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    min-height: 100vh;
+}
+
+/*1 Entrada do Usuário*/
+.box {
+    background-color: rgb(20, 20, 170);
+    border-radius: 20px;
+}
+.bodybox {
+    padding: 0 1rem 1rem;
+}
+.insercao {
+    color: #eee;
+    display: flex;
+    justify-content: space-between;
+    margin: 0.75rem 0;
+}
+
+/*2 Botões*/
+#gerarone {
+    background-color: green;
+    border-radius: 20px;
+    color: whitesmoke;
+    cursor: pointer;
+    display: block;
+    width: 100px;
+    height: 40px;
+    font-family: sans-serif;
+    font-size: 20px;
+    margin-left: 10px;
+}
+#gerartwo {
+    background-color: green;
+    border-radius: 20px;
+    color: whitesmoke;
+    cursor: pointer;
+    display: block;
+    width: 100px;
+    height: 40px;
+    font-family: sans-serif;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+
+/*Caracteres e senhas*/
+#campo {
+    font-family: sans-serif;
+    font-size: 20px;
+    padding-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/*Contém*/
+#check{
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    margin-left: 10px;
+}
+
+/*Text area*/
+#answer {
+    height: 350px;
+    border-radius: 15px;
+    font-size: 20px;
+    padding-left: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

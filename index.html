@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="javascript.png">
+    <link rel="stylesheet" href="style.css">
+    <title>Gerador de senhas</title>
+</head>
+<body>
+    <div class="box"><!--Div mãe principal-->
+        <div class="bodybox"><!--Div mãe secundária-->
+            <div class="insercao" id='campo'><!--Div das quantidades-->
+                <label for='pswLeght'>Caracteres:</label><br><!--Texto-->
+                <input id='pswLeght' type='number' value="8" min='8' max="24"><br><!--Input-->
+                <label for='pswQtd'>Senhas:</label><br><!--Texto-->
+                <input id='pswQtd' type='number' value="1" min='1' max="16"><br><!--Input-->
+            </div>
+
+            <div class="insercao" id='check'><!--Div dos contém-->
+                <label><input id='number' type='checkbox'>Contém números</label><!--Texto e Input-->
+                <label><input id='upperCase' type='checkbox'>Contém letras maiúsculas</label><!--Texto e Input-->
+                <label><input id='special' type='checkbox'>Contém caracteres especiais</label><!--Texto e Input-->
+            </div>
+
+            <div class="insercao"><!--Div dos botões-->
+                <button id="gerarone" onclick="pswGenerate()">Gerar</button><!--Botão gerar-->
+                <button id="gerartwo" onclick="clean()">Limpar</button><!--Botão limpar-->
+            </div>
+
+            <div id='resultado'><!--Div da área do resultado-->
+                <textarea id='answer' rows='6' style= 'width:370px'>Gerar Senha</textarea><!--Text Area (expande)-->
+            </div>
+        </div>
+    </div>
+
+    <!--Script--><!--Script--><!--Script-->
+    <script>
+        /*Função do botão gerar*/
+        function pswGenerate(){
+            let characters =  'abcdefghijklmnopqrstuvwxyz'
+            let password = ' '
+            let leght = document.getElementById('pswLeght').value
+            let qtd = document.getElementById('pswQtd').value
+            let spc = document.getElementById('special').checked
+            let numb = document.getElementById('number').checked
+            let upp = document.getElementById('upperCase').checked
+
+            /*Condição 'se' dos contém*/
+            if(spc == true){characters += '!@#$%¨&*()'}
+            if(numb == true){characters += '1234567890'}
+            if(upp == true){characters += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'}
+
+            let charactersLength = characters.length/*Length*/
+
+            /*Condição*/
+            for(let y = 1; y <= qtd; y++){
+
+                let passwordN = ''
+
+                for(let x = 1; x <= leght; x++){
+                    passwordN = passwordN + characters.charAt(Math.floor(Math.random() * charactersLength))
+                }
+                password = passwordN + '  ' + password
+            }
+
+            document.getElementById('answer').value = password/*Resultado*/
+
+        }
+        /*Função do botão limpar*/
+        function clean(){
+            document.getElementById('answer').value = ' '
+        }
+    </script>
+</body>
+</html>
